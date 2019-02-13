@@ -3,6 +3,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
@@ -22,15 +23,24 @@ public class Main {
 		for (Student i : students) {
 			System.out.println(i.toString());
 		}
-		// determine file type
-
-		// create a Json or CSV parser depending
-
-		// Call Json/CSV.parse()
-
-		// returns an ArrayList
+		
+		System.out.println("SORTING BY NAME");
 
 		// sort ArrayList by name (using StudentName Comparator)
+		Collections.sort(students, Student.StuNameComparator);
+		
+		for (Student i : students) {
+			System.out.println(i.toString());
+		}
+		
+		System.out.println("SORTING BY GRADE");
+
+		// sort ArrayList by grade (using StudentGrade Comparator)
+		Collections.sort(students, Student.StuGradeComparator);
+		
+		for (Student i : students) {
+			System.out.println(i.toString());
+		}
 
 		// output that ArrayList to a file (csv)
 
