@@ -1,11 +1,15 @@
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import org.codehaus.jackson.JsonParseException;
 import org.codehaus.jackson.map.ObjectMapper;
@@ -33,14 +37,31 @@ public class Main {
 			System.out.println(i.toString());
 		}
 		
+		
+		//converting ArrayList<Student> into JSON file
+		ObjectMapper mapper = new ObjectMapper();
+		//Object to JSON in file
+		mapper.writeValue(new File("utils/students_name.json"), students);
+		
+		
 		System.out.println("SORTING BY GRADE");
 
 		// sort ArrayList by grade (using StudentGrade Comparator)
 		Collections.sort(students, Student.StuGradeComparator);
 		
+		FileWriter writer = new FileWriter("utils/students_grade.csv");
+
+        
+		
 		for (Student i : students) {
+			writer.append(Double.toString(i.getGrade()));
+            writer.append(',');
+            writer.append(i.getName());
+            writer.append('\n');
 			System.out.println(i.toString());
 		}
+		 writer.flush();
+         writer.close();
 
 		// output that ArrayList to a file (csv)
 
