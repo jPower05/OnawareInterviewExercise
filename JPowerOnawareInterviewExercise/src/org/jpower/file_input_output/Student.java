@@ -1,4 +1,17 @@
+package org.jpower.file_input_output;
 import java.util.Comparator;
+
+/*
+ * Author James Power
+ * Date: 14/2/19
+ * Class Student:
+ * 
+ * Objective: Student class which are populated by the incoming data
+ * 
+ * Comparators used in order to sort by name and grade through
+ * Collections.sort
+ * 
+ */
 
 public class Student {
 	private double grade;

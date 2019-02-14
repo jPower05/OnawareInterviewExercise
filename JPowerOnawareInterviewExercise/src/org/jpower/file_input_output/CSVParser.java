@@ -1,7 +1,19 @@
+package org.jpower.file_input_output;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+
+/*
+ * Author James Power
+ * Date: 14/2/19
+ * Class CSVParser:
+ * 
+ * Objective: Parses CSV file using bufferedReader and splits on ',' delimiter. 
+ * Parsed data stored as ArrayList of Students(custom java object)
+ * returns ArrayList of Students
+ * 
+ */
 
 public class CSVParser {
 	public ArrayList<Student> csvParser(String filename) throws IOException {
